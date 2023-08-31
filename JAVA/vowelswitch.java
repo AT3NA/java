@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class vus {
+public class vowelswitch {
     public static void main(String[] args){
         char ch;
         System.out.println("Enter a character");

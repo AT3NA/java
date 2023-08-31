@@ -1,4 +1,4 @@
-class nestedfor2
+public class nestedfor2
 {
     public static void main(String arg[])
     {

@@ -1,5 +1,5 @@
 import java.util.*;
-public class fibo {
+public class fibonacci {
     public static void main(String[] args) {
         int count = 7, num1 = 0, num2 = 1;
         System.out.print("enter a value");
