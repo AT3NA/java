@@ -1,27 +1,36 @@
 import java.util.*;
  class insert {
-     public static void main(String arg[]) {
-
-         int i, n;
-         Scanner sc = new Scanner(System.in);
-         System.out.println("enter  array size");
-         n = sc.nextInt();
-         int[] a=new int[n+1];
-         System.out.println("enter  array value");
-         for (i = 0; i < a.length; i++)
-             a[i] = sc.nextInt();
-         System.out.println("enter position to element to insert");
-         int p = sc.nextInt();
-         System.out.println("enter element to insert");
-         int x = sc.nextInt();
-         for (i = (n - 1); i >= (p - 1); i--)
-         {
-             a[i + 1] = a[i];
-             a[n] = x;
-         }
-         a[i + 1] = x;
-         System.out.println("after inserting element");
-         for (i = 0; i < n + 1; i++)
-         System.out.println(a[i]);
-     }
- }
+     public static void main(String arg[])
+     {
+        int a[]=new int[10],i,n;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of array");
+        n=sc.nextInt();
+        System.out.println("Enter the elements of array");
+        for(i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        System.out.println("Enter the position of element to be inserted");
+        int pos=sc.nextInt();
+        System.out.println("Enter the element to be inserted");
+        int ele=sc.nextInt();
+        for(i=n-1;i>=pos;i--)
+        {
+            a[i+1]=a[i];
+        }
+        a[pos]=ele;
+        System.out.println("The array after insertion is");
+        int x=sc.nextInt();
+        for(i=(n+1);i>=0;i--)
+        {
+            a[i+1]=a[i];
+        }
+        a[i+1]=x;
+        System.out.println("The array after insertion is");
+        for(i=0;i<n+2;i++)
+        {
+            System.out.println(a[i]);
+        }
+    }
+}
