@@ -1,41 +1,43 @@
 import java.util.*;
 
-class Employee {
-    String e_name, e_code;
-    int b_pay;
+class Emp {
+    String ecode, ename;
+    int bpay;
 
-    void getData() {
-        System.out.println("Enter the e_name, e_code, and b_pay");
+    void getdata() {
+        System.out.println("Enter the employee code, name and basic pay");
         Scanner sc = new Scanner(System.in);
-        e_name = sc.next();
-        e_code = sc.next();
-        b_pay = sc.nextInt();
+        ecode = sc.next();
+        ename = sc.next();
+        bpay = sc.nextInt();
     }
 }
 
-class Allowances extends Employee {
-    int hr_a, d_a, t_a, g_pay;
+class Allowance extends Emp {
+    int hra, da, ta, gp;
 
     void calculation() {
-        hr_a = b_pay * 10 / 100;
-        d_a = b_pay * 12 / 100;
-        t_a = b_pay * 5 / 100;
-        g_pay = b_pay + hr_a + d_a + t_a;
-        System.out.println("Gross amount: " + g_pay);
+        hra = bpay * 10 / 100;
+        da = bpay * 12 / 100;
+        ta = bpay * 5 / 100;
+        gp = bpay + hra + da + ta;
+        System.out.println("Gross pay is " + gp);
     }
 }
 
-class EmpMain extends Allowances {
-    int p_f;
+class Employee extends Allowance {
+    int pf, hp;
 
-    EmpMain() {
-        p_f = (b_pay + 15 * 500);
+    void clapf() {
+        pf = bpay * 15 / 100;
+        hp = gp - pf;
+        System.out.println("Net pay is " + hp);
     }
 
-    public static void main(String arg[]) {
-        EmpMain c = new EmpMain();
-        c.getData();
-        c.calculation();
-        System.out.println("Net pay=" + (c.g_pay - c.p_f));
+    public static void main(String args[]) {
+        Employee e = new Employee();
+        e.getdata();
+        e.calculation();
+        e.clapf();
     }
 }
